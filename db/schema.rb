@@ -10,16 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_06_061137) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_06_064308) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "events", force: :cascade do |t|
-    t.date "event_date"
-    t.string "event_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "homes", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -34,11 +27,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_06_061137) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "unconfirmed_email"
-    t.datetime "confirmed_at"
-    t.string "confirmation_token"
-    t.datetime "confirmation_sent_at"
-    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
