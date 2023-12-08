@@ -5,8 +5,19 @@
     <% end %>
 
     <%= render @user %>
+    <div class="rounded-lg py-3 px-5 bg-gray-100 font-extrabold flex flex-col m-1 p-3">
+      <p>
+      Username : <%= current_user.username %>
+      </p>
+      <p>
+      Email : <%= current_user.email %>
+      </p>
+    </div>
+    <h1 class="font-bold">
+      Your Events : 
+    </h1>
     <% @created_events.each do |event| %>
-      <p><%= event.title %></p>
+      <p><%= link_to event.title, event,  class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium m-2" %></p>
       <!-- Add more event details here -->
     <% end %>
 
