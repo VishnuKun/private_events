@@ -5,6 +5,10 @@
     <% end %>
 
     <%= render @user %>
+    <% @created_events.each do |event| %>
+      <p><%= event.title %></p>
+      <!-- Add more event details here -->
+    <% end %>
 
     <%= link_to "Edit this user", edit_user_path(@user), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
