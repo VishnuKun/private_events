@@ -3,13 +3,15 @@
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
   <% if user_signed_in? %> 
-    <div> Welcome <%= current_user.username %> </div> 
-    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "text-white ml-2 rounded-lg py-3 px-5 bg-blue-600 inline-block font-medium"  %> 
-  <% else %>
-    <%= button_to "Sign in", new_user_session_path, class: "text-white ml-2 rounded-lg py-3 px-5 bg-blue-600 inline-block font-medium"  %> 
-  <% end %>
+    <div class="flex">
+      <div class="font-extrabold"> Welcome <%= current_user.username %> </div> 
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "text-white ml-2 rounded-lg py-3 px-5 bg-blue-600 inline-block font-medium"  %> 
+      <%= link_to 'Account', current_user , class: "text-white ml-2 rounded-lg py-3 px-5 bg-blue-600 inline-block font-medium"%>
+      <% else %>
+        <%= button_to "Sign in", new_user_session_path, class: "text-white ml-2 rounded-lg py-3 px-5 bg-blue-600 inline-block font-medium"  %> 
+      <% end %>
+    </div>
 
-  <%= link_to 'Account', current_user %>
   <div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Homes</h1>
     <%# <%= link_to "New home", new_home_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %> 
