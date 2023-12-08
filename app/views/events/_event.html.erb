@@ -6,7 +6,12 @@
 
   <p class="my-5">
     <strong class="block font-medium mb-1">Host:</strong>
-    <%= event.host %>
+    <% creator = User.find_by(id: event.creator_id) %>
+    <% if creator %>
+      <%= creator.username %>
+    <% else %>
+      <p>No creator</p>
+    <% end %>
   </p>
 
   <p class="my-5">
