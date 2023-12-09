@@ -5,11 +5,20 @@
     <% end %>
 
     <%= render @event %>
+    <!-- app/views/events/show.html.erb -->
+    <h2>Attendees</h2>
+    <ul>
+      <% @event.attendees.each do |attendee| %>
+        <li><%= attendee.name %></li>
+      <% end %>
+    </ul>
+
 
     <%= link_to "Edit this event", edit_event_path(@event), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
       <%= button_to "Destroy this event", event_path(@event), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
     <%= link_to "Back to events", events_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <button id="attend-button" data-event-id="<%= @event.id %>" , class="ml-2 rounded-lg py-3 px-5 bg-blue-500 inline-block font-medium text-white">Attend this Event</button>  
   </div>
 </div>

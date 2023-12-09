@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   resources :events
   resources :users
   resources :homes
+  resources :events do
+    resources :attendances, only: [:create]
+  end
 end
