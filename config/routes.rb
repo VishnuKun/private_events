@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   resources :users
   resources :homes
   resources :events do
-    resources :attendances, only: [:create]
+    resources :attendances, only: [:create, :destroy]
   end
 end
