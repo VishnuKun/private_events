@@ -24,14 +24,14 @@
     <h2>Upcoming Events</h2>
     <ul>
       <% @user.attended_events.upcoming.each do |event| %>
-        <li><%= event.name %></li>
+        <li><%= event.title %></li>
       <% end %>
     </ul>
 
     <h2>Past Events</h2>
     <ul>
       <% @user.attended_events.past.each do |event| %>
-        <li><%= event.name %></li>
+        <li><%= event.title %></li>
       <% end %>
     </ul>
 
@@ -39,7 +39,7 @@
     <h2>Attended Events</h2>
     <ul>
       <% @user.attended_events.each do |event| %>
-        <li><%= event.name %></li>
+        <li><%= event.title %></li>
       <% end %>
     </ul>
     <%= link_to "Edit this user", edit_user_path(@user), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
